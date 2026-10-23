@@ -17,9 +17,13 @@
   --purple: #e6c7fa;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -28,9 +32,14 @@ body {
   color: var(--green);
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-button { font: inherit; }
+button {
+  font: inherit;
+}
 
 header {
   display: flex;
@@ -43,8 +52,8 @@ header {
 }
 
 .logo {
-  font-weight: 900;
   font-size: 21px;
+  font-weight: 900;
   letter-spacing: -1px;
 }
 
@@ -54,8 +63,13 @@ nav {
   gap: 22px;
 }
 
-nav a { font-size: 14px; }
-nav a:hover { color: var(--coral); }
+nav a {
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--coral);
+}
 
 .hero {
   min-height: 75vh;
@@ -76,7 +90,9 @@ nav a:hover { color: var(--coral); }
 }
 
 .hero .eyebrow,
-.contact .eyebrow { color: var(--coral); }
+.contact .eyebrow {
+  color: var(--coral);
+}
 
 h1 {
   max-width: 950px;
@@ -86,7 +102,9 @@ h1 {
   letter-spacing: -4px;
 }
 
-h1 span { color: var(--coral); }
+h1 span {
+  color: var(--coral);
+}
 
 .hero p {
   max-width: 580px;
@@ -105,9 +123,13 @@ h1 span { color: var(--coral); }
   font-weight: 800;
 }
 
-.btn:hover { background: var(--lime); }
+.btn:hover {
+  background: var(--lime);
+}
 
-section { padding: 90px 7%; }
+section {
+  padding: 90px 7%;
+}
 
 h2 {
   margin: 12px 0 22px;
@@ -138,18 +160,30 @@ h2 {
   justify-content: flex-end;
 }
 
-.project:nth-child(1) { background: var(--coral); }
-.project:nth-child(2) { background: var(--lime); }
-.project:nth-child(3) { background: var(--purple); }
+.project:nth-child(1) {
+  background: var(--coral);
+}
+
+.project:nth-child(2) {
+  background: var(--lime);
+}
+
+.project:nth-child(3) {
+  background: var(--purple);
+}
 
 .project h3 {
   margin: 0 0 8px;
   font-size: 27px;
 }
 
-.project p { line-height: 1.6; }
+.project p {
+  line-height: 1.6;
+}
 
-.about { background: #f7dfca; }
+.about {
+  background: #f7dfca;
+}
 
 .contact {
   background: var(--green);
@@ -165,44 +199,51 @@ footer {
 
 /* ISO CHARACTER */
 
-.iso-guide {
+#isoGuide {
   position: fixed;
   right: 22px;
   bottom: 16px;
-  z-index: 1000;
+  z-index: 9999;
   width: 112px;
   height: 130px;
+  pointer-events: none;
 }
 
-.iso-button {
+#isoButton {
   position: absolute;
   right: 0;
   bottom: 0;
+  display: block;
   width: 112px;
   height: 130px;
   padding: 0;
-  border: none;
+  margin: 0;
+  border: 0;
   border-radius: 0;
-  background: transparent;
+  background: none;
   box-shadow: none;
+  overflow: visible;
   cursor: pointer;
+  pointer-events: auto;
   animation: isoFloat 4s ease-in-out infinite;
 }
 
-.iso-button img {
+#isoButton img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 112px;
+  height: 130px;
   object-fit: contain;
-  filter: drop-shadow(0 8px 9px #0004);
+  opacity: 1;
+  visibility: visible;
+  filter: drop-shadow(0 8px 9px rgba(0,0,0,.25));
   transition: transform .25s ease;
 }
 
-.iso-button:hover img {
+#isoButton:hover img {
   transform: scale(1.08) rotate(-3deg);
 }
 
-.iso-button:focus-visible,
+#isoButton:focus-visible,
 .iso-close:focus-visible,
 .iso-greeting-close:focus-visible,
 .iso-choices button:focus-visible {
@@ -211,13 +252,18 @@ footer {
 }
 
 @keyframes isoFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-9px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
 }
 
 /* GREETING */
 
-.iso-greeting {
+#isoGreeting {
   position: absolute;
   right: 92px;
   bottom: 110px;
@@ -228,15 +274,16 @@ footer {
   border: 2px solid var(--green);
   border-radius: 18px;
   box-shadow: 4px 5px 0 var(--green);
+  pointer-events: auto;
   animation: isoAppear .35s ease-out;
 }
 
-.iso-greeting p {
+#isoGreeting p {
   margin: 0 0 5px;
   font-weight: 800;
 }
 
-.iso-greeting span {
+#isoGreeting span {
   font-size: 13px;
   line-height: 1.5;
 }
@@ -252,9 +299,9 @@ footer {
   cursor: pointer;
 }
 
-/* ISO MENU */
+/* ISO NAVIGATION PANEL */
 
-.iso-panel {
+#isoPanel {
   position: absolute;
   right: 0;
   bottom: 140px;
@@ -264,7 +311,8 @@ footer {
   overflow: hidden;
   background: #fffaf3;
   color: var(--green);
-  box-shadow: 0 14px 40px #0003;
+  box-shadow: 0 14px 40px rgba(0,0,0,.2);
+  pointer-events: auto;
   animation: isoAppear .3s ease-out;
 }
 
@@ -277,7 +325,9 @@ footer {
   color: var(--cream);
 }
 
-.iso-panel-header strong { font-size: 19px; }
+.iso-panel-header strong {
+  font-size: 19px;
+}
 
 .iso-panel-header p {
   margin: 8px 0 0;
@@ -311,9 +361,11 @@ footer {
   cursor: pointer;
 }
 
-.iso-choices button:hover { background: var(--lime); }
+.iso-choices button:hover {
+  background: var(--lime);
+}
 
-.iso-recommendation {
+#isoRecommendation {
   margin: 0 16px 16px;
   padding: 14px;
   border-radius: 12px;
@@ -322,16 +374,18 @@ footer {
   line-height: 1.6;
 }
 
-.iso-recommendation p { margin: 0 0 10px; }
+#isoRecommendation p {
+  margin: 0 0 10px;
+}
 
-.iso-recommendation a {
+#isoRecommendation a {
   font-weight: 800;
   text-decoration: underline;
 }
 
-.iso-greeting[hidden],
-.iso-panel[hidden],
-.iso-recommendation[hidden] {
+#isoGreeting[hidden],
+#isoPanel[hidden],
+#isoRecommendation[hidden] {
   display: none !important;
 }
 
@@ -340,6 +394,7 @@ footer {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -347,45 +402,66 @@ footer {
 }
 
 @media (max-width: 760px) {
-  header { flex-wrap: wrap; }
-  nav { gap: 14px; }
-  h1 { letter-spacing: -2px; }
-  section { padding: 65px 7%; }
-  .projects { grid-template-columns: 1fr; }
+  header {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-  .iso-guide {
+  #isoGuide {
     right: 12px;
     bottom: 12px;
     width: 85px;
     height: 100px;
   }
 
-  .iso-button {
+  #isoButton,
+  #isoButton img {
     width: 85px;
     height: 100px;
   }
 
-  .iso-greeting {
+  #isoGreeting {
     right: 65px;
     bottom: 85px;
     width: min(195px, calc(100vw - 105px));
   }
 
-  .iso-panel { bottom: 108px; }
+  #isoPanel {
+    bottom: 108px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 
-  .iso-button,
-  .iso-greeting,
-  .iso-panel {
+  #isoButton,
+  #isoGreeting,
+  #isoPanel {
     animation: none;
   }
 
-  .iso-button img { transition: none; }
+  #isoButton img {
+    transition: none;
+  }
 }
 </style>
 </head>
@@ -394,6 +470,7 @@ footer {
 
 <header>
   <a href="#" class="logo">CREATIVE / PORTFOLIO</a>
+
   <nav aria-label="Main navigation">
     <a href="#work">Work</a>
     <a href="#about">About</a>
@@ -420,7 +497,9 @@ footer {
       interactive experiences and purposeful digital products.
     </p>
 
-    <a class="btn" href="#work">Explore My Work ↗</a>
+    <a class="btn" href="#work">
+      Explore My Work ↗
+    </a>
   </div>
 
   <section id="work">
@@ -498,8 +577,8 @@ footer {
       digital learning and meaningful web projects.
     </p>
 
-    <a class="btn" href="mailto:YOUR-EMAIL@example.com">
-      Get in Touch ↗
+    <a class="btn" href="#contact">
+      Let's Connect ↗
     </a>
   </section>
 
@@ -510,11 +589,11 @@ footer {
   Designed with curiosity.
 </footer>
 
-<!-- ISO INTERACTIVE CHARACTER -->
+<!-- ISO: INTERACTIVE WEBSITE GUIDE -->
 
-<div class="iso-guide" id="isoGuide">
+<div id="isoGuide">
 
-  <div class="iso-greeting" id="isoGreeting">
+  <div id="isoGreeting">
     <button
       type="button"
       class="iso-greeting-close"
@@ -528,17 +607,20 @@ footer {
 
   <button
     type="button"
-    class="iso-button"
     id="isoButton"
     aria-label="Open Iso's navigation guide"
     aria-controls="isoPanel"
     aria-expanded="false"
   >
-    <img src="./iso.png" alt="">
+    <img
+      src="https://lungilethandomtshali21-dot.github.io/Creative-portfolio/iso.png"
+      alt=""
+      width="112"
+      height="130"
+    >
   </button>
 
   <aside
-    class="iso-panel"
     id="isoPanel"
     aria-label="Iso's portfolio guide"
     hidden
@@ -576,7 +658,6 @@ footer {
     </div>
 
     <div
-      class="iso-recommendation"
       id="isoRecommendation"
       aria-live="polite"
       hidden
@@ -595,7 +676,8 @@ const isoButton = document.getElementById("isoButton");
 const isoPanel = document.getElementById("isoPanel");
 const isoClose = document.getElementById("isoClose");
 const isoGreeting = document.getElementById("isoGreeting");
-const isoGreetingClose = document.getElementById("isoGreetingClose");
+const isoGreetingClose =
+  document.getElementById("isoGreetingClose");
 
 const recommendation =
   document.getElementById("isoRecommendation");
@@ -611,18 +693,21 @@ const isoTopics = {
     link: "#work",
     label: "Explore interactive learning →"
   },
+
   digital: {
     message:
       "Discover web interfaces, prototypes and useful digital solutions.",
     link: "#services",
     label: "Explore digital expertise →"
   },
+
   creative: {
     message:
       "Explore visual storytelling, creative production and design.",
     link: "#work",
     label: "See creative work →"
   },
+
   collaborate: {
     message:
       "Have a project in mind? Let's explore working together.",
@@ -668,6 +753,7 @@ document.querySelectorAll("[data-iso-topic]")
   .forEach(button => {
     button.addEventListener("click", () => {
       const topic = isoTopics[button.dataset.isoTopic];
+
       if (!topic) return;
 
       recommendationText.textContent = topic.message;
@@ -702,3 +788,4 @@ document.getElementById("year").textContent =
 
 </body>
 </html>
+
