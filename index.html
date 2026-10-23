@@ -246,6 +246,230 @@
 
 </div>
 
+
+/* ISO V2 — INTERACTIVE CHARACTER */
+
+.iso-guide {
+  position: fixed;
+  bottom: 18px;
+  right: 24px;
+  z-index: 1000;
+  width: 110px;
+  height: 125px;
+}
+
+.iso-guide .iso-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 110px;
+  height: 125px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  overflow: visible;
+  animation: isoFloat 4s ease-in-out infinite;
+}
+
+.iso-guide .iso-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px #0003);
+  transition: transform 0.25s ease;
+}
+
+.iso-guide .iso-button:hover img {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.iso-guide .iso-button:focus-visible {
+  outline: 3px solid #ff9e78;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+@keyframes isoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+/* Greeting bubble */
+
+.iso-guide .iso-greeting {
+  position: absolute;
+  bottom: 105px;
+  right: 90px;
+  width: 215px;
+  padding: 15px 28px 15px 17px;
+  background: #fff4e5;
+  color: #18362f;
+  border: 2px solid #18362f;
+  border-radius: 18px;
+  box-shadow: 4px 5px 0 #18362f;
+  animation: isoAppear 0.5s ease both;
+}
+
+.iso-greeting p {
+  margin: 0 0 5px;
+  font-weight: 800;
+}
+
+.iso-greeting span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.iso-greeting-close,
+.iso-close {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.iso-greeting-close {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+}
+
+/* Navigation panel */
+
+.iso-guide .iso-panel {
+  position: absolute;
+  bottom: 135px;
+  right: 0;
+  width: min(340px, calc(100vw - 24px));
+  padding: 0;
+  border: 2px solid #18362f;
+  border-radius: 22px;
+  background: #fffaf3;
+  color: #18362f;
+  overflow: hidden;
+  box-shadow: 0 14px 40px #0003;
+  animation: isoAppear 0.3s ease both;
+}
+
+.iso-guide .iso-panel[hidden],
+.iso-guide .iso-greeting[hidden],
+.iso-guide .iso-recommendation[hidden] {
+  display: none;
+}
+
+.iso-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  background: #18362f;
+  color: #fff4e5;
+}
+
+.iso-panel-header strong {
+  font-size: 19px;
+}
+
+.iso-panel-header p {
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+.iso-choices {
+  display: grid;
+  gap: 9px;
+  padding: 16px;
+}
+
+.iso-choices button {
+  text-align: left;
+  padding: 13px;
+  border: 1px solid #e8d6c2;
+  border-radius: 12px;
+  background: #fff4e5;
+  color: #18362f;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.iso-choices button:hover,
+.iso-choices button:focus-visible {
+  background: #d5ec9b;
+}
+
+.iso-recommendation {
+  margin: 0 16px 16px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f7dfca;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.iso-recommendation p {
+  margin: 0 0 10px;
+}
+
+.iso-recommendation a {
+  display: inline-block;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+@keyframes isoAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .iso-guide {
+    right: 12px;
+    bottom: 12px;
+    width: 85px;
+    height: 100px;
+  }
+
+  .iso-guide .iso-button {
+    width: 85px;
+    height: 100px;
+  }
+
+  .iso-guide .iso-greeting {
+    right: 65px;
+    bottom: 85px;
+    width: min(195px, calc(100vw - 105px));
+  }
+
+  .iso-guide .iso-panel {
+    right: 0;
+    bottom: 108px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iso-guide .iso-button,
+  .iso-guide .iso-panel,
+  .iso-guide .iso-greeting {
+    animation: none;
+  }
+
+  .iso-guide .iso-button img,
+  .iso-choices button {
+    transition: none;
+  }
+}
  </style>
 </head>
 
