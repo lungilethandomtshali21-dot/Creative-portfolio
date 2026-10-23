@@ -540,29 +540,120 @@
         product development. I enjoy turning imaginative
         concepts into structured, usable experiences.
       </p>
-    </section>
+   
+<script>
+  const isoButton = document.getElementById("isoButton");
+  const isoPanel = document.getElementById("isoPanel");
+  const isoClose = document.getElementById("isoClose");
+  const isoGreeting = document.getElementById("isoGreeting");
+  const isoGreetingClose =
+    document.getElementById("isoGreetingClose");
 
-    <section id="services">
-      <div class="eyebrow">What I bring</div>
-      <h2>Creative. Technical. Practical.</h2>
-      <p class="intro">
-        Visual concept development, web interfaces,
-        interactive prototypes, emerging AR technology,
-        planning and project coordination.
-      </p>
-    </section>
+  const recommendation =
+    document.getElementById("isoRecommendation");
+  const recommendationText =
+    document.getElementById("isoRecommendationText");
+  const recommendationLink =
+    document.getElementById("isoRecommendationLink");
 
-    <section class="contact" id="contact">
-      <div class="eyebrow">Let's collaborate</div>
-      <h2>Have something in mind?</h2>
-      <p class="intro">
-        I'm interested in creative technology,
-        digital learning and meaningful web projects.
-      </p>
-      <a class="btn" href="mailto:YOUR-EMAIL@example.com">
-        Get in Touch ↗
-      </a>
-    </section>
+  // Recommendations based on visitor interests
+  const isoTopics = {
+    learning: {
+      message:
+        "Love that! Explore interactive learning and web-based AR experiences.",
+      link: "#work",
+      label: "Explore interactive learning →"
+    },
+
+    digital: {
+      message:
+        "Interested in useful digital tools? Discover web interfaces, prototypes and workflow solutions.",
+      link: "#services",
+      label: "Explore digital expertise →"
+    },
+
+    creative: {
+      message:
+        "Let's explore the creative side: storytelling, visual concepts and production.",
+      link: "#work",
+      label: "See creative work →"
+    },
+
+    collaborate: {
+      message:
+        "Have a project in mind? Head to the contact section to start a conversation.",
+      link: "#contact",
+      label: "Go to contact →"
+    }
+  };
+
+  function setIsoPanel(open) {
+    isoPanel.hidden = !open;
+    isoButton.setAttribute("aria-expanded", String(open));
+    isoButton.setAttribute(
+      "aria-label",
+      open ? "Close Iso's navigation guide"
+           : "Open Iso's navigation guide"
+    );
+
+    if (open) {
+      isoGreeting.hidden = true;
+    }
+  }
+
+  isoButton.addEventListener("click", () => {
+    setIsoPanel(isoPanel.hidden);
+  });
+
+  isoClose.addEventListener("click", () => {
+    setIsoPanel(false);
+    isoButton.focus();
+  });
+
+  isoGreetingClose.addEventListener("click", () => {
+    isoGreeting.hidden = true;
+  });
+
+  document.querySelectorAll("[data-iso-topic]")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        const topic = isoTopics[button.dataset.isoTopic];
+        if (!topic) return;
+
+        recommendationText.textContent = topic.message;
+        recommendationLink.href = topic.link;
+        recommendationLink.textContent = topic.label;
+        recommendation.hidden = false;
+      });
+    });
+
+  recommendationLink.addEventListener("click", () => {
+    setIsoPanel(false);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !isoPanel.hidden) {
+      setIsoPanel(false);
+      isoButton.focus();
+    }
+  });
+
+  document.addEventListener("click", event => {
+    if (
+      !isoPanel.hidden &&
+      !document.getElementById("isoGuide")
+        .contains(event.target)
+    ) {
+      setIsoPanel(false);
+    }
+  });
+
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+</script>
+
   </main>
 
   <footer>
