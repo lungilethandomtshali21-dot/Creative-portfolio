@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Creative technology, digital products, interactive learning and original concept projects.">
+<meta name="description" content="Creative technology, digital products, interactive learning and working prototypes.">
 <title>Creative Portfolio | Creative Technologist</title>
 
 <style>
@@ -15,39 +15,31 @@
   --cream:#fff4e5;
   --lime:#d5ec9b;
   --purple:#e6c7fa;
-  --ink:#18362f;
 }
-
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:var(--cream);
-  color:var(--ink);
+  color:var(--green);
 }
-button { font:inherit; }
+button { font:inherit; cursor:pointer; }
 a { color:inherit; text-decoration:none; }
-
 header {
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   flex-wrap:wrap;
   gap:20px;
   padding:24px 7%;
   background:var(--green);
   color:var(--cream);
 }
-.logo {
-  font-size:21px;
-  font-weight:900;
-  letter-spacing:-1px;
-}
+.logo { font-size:21px; font-weight:900; letter-spacing:-1px; }
 nav { display:flex; flex-wrap:wrap; gap:22px; }
 nav a { font-size:14px; }
 nav a:hover { color:var(--coral); }
-
 .hero {
   min-height:75vh;
   padding:90px 7%;
@@ -64,8 +56,7 @@ nav a:hover { color:var(--coral); }
   text-transform:uppercase;
   letter-spacing:2.5px;
 }
-.hero .eyebrow,
-.contact .eyebrow { color:var(--coral); }
+.hero .eyebrow,.contact .eyebrow { color:var(--coral); }
 h1 {
   max-width:950px;
   margin:24px 0;
@@ -74,11 +65,7 @@ h1 {
   letter-spacing:-4px;
 }
 h1 span { color:var(--coral); }
-.hero p {
-  max-width:580px;
-  font-size:18px;
-  line-height:1.7;
-}
+.hero p { max-width:580px; font-size:18px; line-height:1.7; }
 .btn {
   display:inline-block;
   width:fit-content;
@@ -90,7 +77,6 @@ h1 span { color:var(--coral); }
   font-weight:800;
 }
 .btn:hover { background:var(--lime); }
-
 section { padding:90px 7%; }
 h2 {
   margin:12px 0 22px;
@@ -98,11 +84,7 @@ h2 {
   line-height:1.1;
   letter-spacing:-2px;
 }
-.intro {
-  max-width:690px;
-  font-size:18px;
-  line-height:1.8;
-}
+.intro { max-width:690px; font-size:18px; line-height:1.8; }
 
 /* PROJECT GALLERY */
 
@@ -118,14 +100,11 @@ h2 {
   padding:11px 18px;
   background:transparent;
   color:var(--green);
-  cursor:pointer;
 }
-.filter-btn.active,
-.filter-btn:hover {
+.filter-btn.active,.filter-btn:hover {
   background:var(--green);
   color:var(--cream);
 }
-
 .project-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -145,7 +124,6 @@ h2 {
   box-shadow:0 14px 28px #18362f1c;
 }
 .project-card[hidden] { display:none; }
-
 .project-art {
   position:relative;
   display:flex;
@@ -158,7 +136,6 @@ h2 {
 .project-art.learning { background:var(--lime); }
 .project-art.flow { background:var(--purple); }
 .project-art.iso { background:var(--coral); }
-
 .art-symbol {
   font-size:82px;
   filter:drop-shadow(4px 8px 0 #18362f22);
@@ -194,14 +171,8 @@ h2 {
   letter-spacing:1px;
 }
 .project-status.live { background:var(--lime); }
-.project-content h3 {
-  margin:18px 0 8px;
-  font-size:28px;
-}
-.project-content p {
-  line-height:1.7;
-  font-size:15px;
-}
+.project-content h3 { margin:18px 0 8px; font-size:28px; }
+.project-content p { line-height:1.7; font-size:15px; }
 .skills {
   margin:10px 0 22px;
   color:#50655b;
@@ -217,7 +188,29 @@ h2 {
   color:var(--green);
   font-weight:900;
   text-decoration:underline;
-  cursor:pointer;
+}
+
+/* LEARNLAB LINKS */
+
+.learnlab-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:auto;
+}
+.learnlab-links .project-action {
+  display:inline-block;
+  margin-top:0;
+  padding:12px 15px;
+  border-radius:30px;
+  background:var(--green);
+  color:var(--cream);
+  font-size:13px;
+  text-decoration:none;
+}
+.learnlab-links .project-action:hover {
+  background:var(--coral);
+  color:var(--green);
 }
 
 /* PROJECT DETAILS */
@@ -240,10 +233,7 @@ h2 {
   align-items:start;
   gap:20px;
 }
-.dialog-top h3 {
-  margin:0;
-  font-size:32px;
-}
+.dialog-top h3 { margin:0; font-size:32px; }
 .dialog-close {
   width:38px;
   height:38px;
@@ -251,7 +241,6 @@ h2 {
   border-radius:50%;
   background:var(--green);
   color:white;
-  cursor:pointer;
   font-size:22px;
 }
 .dialog-inner p { line-height:1.8; }
@@ -263,12 +252,8 @@ h2 {
   background:#f6dfca;
   font-size:13px;
 }
-
 .about { background:#f7dfca; }
-.contact {
-  background:var(--green);
-  color:var(--cream);
-}
+.contact { background:var(--green); color:var(--cream); }
 footer {
   padding:26px 7%;
   background:var(--deep);
@@ -301,7 +286,6 @@ footer {
   background:none;
   box-shadow:none;
   overflow:visible;
-  cursor:pointer;
   pointer-events:auto;
   animation:isoFloat 4s ease-in-out infinite;
 }
@@ -315,9 +299,7 @@ footer {
   filter:drop-shadow(0 8px 9px #0004);
   transition:transform .25s ease;
 }
-#isoButton:hover img {
-  transform:scale(1.08) rotate(-3deg);
-}
+#isoButton:hover img { transform:scale(1.08) rotate(-3deg); }
 @keyframes isoFloat {
   0%,100% { transform:translateY(0); }
   50% { transform:translateY(-9px); }
@@ -346,7 +328,6 @@ footer {
   background:transparent;
   color:var(--green);
   font-size:24px;
-  cursor:pointer;
 }
 #isoPanel {
   position:absolute;
@@ -378,13 +359,8 @@ footer {
   background:transparent;
   color:var(--cream);
   font-size:25px;
-  cursor:pointer;
 }
-.iso-choices {
-  display:grid;
-  gap:9px;
-  padding:16px;
-}
+.iso-choices { display:grid; gap:9px; padding:16px; }
 .iso-choices button {
   padding:13px;
   border:1px solid #e8d6c2;
@@ -394,7 +370,6 @@ footer {
   text-align:left;
   font-size:13px;
   line-height:1.5;
-  cursor:pointer;
 }
 .iso-choices button:hover { background:var(--lime); }
 #isoRecommendation {
@@ -406,13 +381,8 @@ footer {
   line-height:1.6;
 }
 #isoRecommendation p { margin:0 0 10px; }
-#isoRecommendation a {
-  font-weight:800;
-  text-decoration:underline;
-}
-#isoGreeting[hidden],
-#isoPanel[hidden],
-#isoRecommendation[hidden] {
+#isoRecommendation a { font-weight:800; text-decoration:underline; }
+#isoGreeting[hidden],#isoPanel[hidden],#isoRecommendation[hidden] {
   display:none !important;
 }
 @keyframes isoAppear {
@@ -442,11 +412,7 @@ footer {
     width:85px;
     height:100px;
   }
-  #isoButton,
-  #isoButton img {
-    width:85px;
-    height:100px;
-  }
+  #isoButton,#isoButton img { width:85px; height:100px; }
   #isoGreeting {
     right:65px;
     bottom:85px;
@@ -476,17 +442,12 @@ footer {
 
 <main>
   <div class="hero">
-    <div class="eyebrow">
-      Creative Technologist & Digital Product Developer
-    </div>
-    <h1>
-      Creative ideas.<br>
-      <span>Real-world execution.</span>
-    </h1>
+    <div class="eyebrow">Creative Technologist & Digital Product Developer</div>
+    <h1>Creative ideas.<br><span>Real-world execution.</span></h1>
     <p>
-      I bring visual storytelling, technology and
-      practical problem-solving together to create
-      interactive experiences and purposeful digital products.
+      I bring visual storytelling, technology and practical
+      problem-solving together to create interactive experiences
+      and purposeful digital products.
     </p>
     <a class="btn" href="#work">Explore My Work ↗</a>
   </div>
@@ -508,42 +469,70 @@ footer {
 
     <div class="project-grid">
 
-      <article class="project-card" data-category="concept">
+      <!-- LEARNLAB: WORKING 2D + CAMERA AR -->
+
+      <article class="project-card" data-category="prototype">
         <div class="project-art learning">
           <span class="art-symbol" aria-hidden="true">🌱</span>
           <span class="art-label">LearnLab AR</span>
         </div>
         <div class="project-content">
-          <span class="project-status">Concept project</span>
+          <span class="project-status live">Working prototype</span>
           <h3>LearnLab AR</h3>
           <p>
-            An idea for turning school subjects into engaging,
-            interactive visual learning experiences.
+            An interactive science-learning experience combining
+            visual explanations, quizzes and camera-based augmented reality.
           </p>
           <div class="skills">
-            Educational design · Web AR · Visual storytelling
+            Web AR · Educational Technology · Interactive Learning
           </div>
-        <a
-  <div class="learnlab-links">
-  <a
-    class="project-action"
-    href="https://lungilethandomtshali21-dot.github.io/LearnLab-AR/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    🌱 Explore 2D ↗
-  </a>
 
-  <a
-    class="project-action"
-    href="https://ar.isoloprintx.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    📷 Launch Camera AR ↗
-  </a>
-</div>
+          <div class="learnlab-links">
+            <a
+              class="project-action"
+              href="https://lungilethandomtshali21-dot.github.io/LearnLab-AR/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🌱 Explore 2D ↗
+            </a>
+
+            <a
+              class="project-action"
+              href="https://ar.isoloprintx.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📷 Launch Camera AR ↗
+            </a>
+          </div>
+        </div>
       </article>
+
+      <!-- FLOWTRACK: CONCEPT -->
+
+      <article class="project-card" data-category="concept">
+        <div class="project-art flow">
+          <span class="art-symbol" aria-hidden="true">📦</span>
+          <span class="art-label">FlowTrack</span>
+        </div>
+        <div class="project-content">
+          <span class="project-status">Concept project</span>
+          <h3>FlowTrack</h3>
+          <p>
+            A proposed delivery dashboard for making shipment
+            progress and documentation easier to follow.
+          </p>
+          <div class="skills">
+            UX Design · Workflow Design · Digital Systems
+          </div>
+          <button class="project-action" data-project="flow">
+            Explore the concept ↗
+          </button>
+        </div>
+      </article>
+
+      <!-- MEET ISO: WORKING PROTOTYPE -->
 
       <article class="project-card" data-category="prototype">
         <div class="project-art iso">
@@ -558,9 +547,8 @@ footer {
           <span class="project-status live">Working prototype</span>
           <h3>Meet Iso</h3>
           <p>
-            An illustrated interactive guide that helps
-            visitors explore this portfolio through
-            character-led navigation.
+            An illustrated interactive guide that helps visitors
+            explore this portfolio through character-led navigation.
           </p>
           <div class="skills">
             Character-led UX · HTML · CSS · JavaScript
@@ -611,7 +599,7 @@ footer {
   Designed with curiosity.
 </footer>
 
-<!-- PROJECT DETAIL POPUP -->
+<!-- PROJECT DETAILS -->
 
 <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
   <div class="dialog-inner">
@@ -626,16 +614,11 @@ footer {
   </div>
 </dialog>
 
-<!-- ISO: INTERACTIVE WEBSITE GUIDE -->
+<!-- ISO INTERACTIVE GUIDE -->
 
 <div id="isoGuide">
   <div id="isoGreeting">
-    <button
-      type="button"
-      class="iso-greeting-close"
-      id="isoGreetingClose"
-      aria-label="Dismiss greeting"
-    >×</button>
+    <button type="button" class="iso-greeting-close" id="isoGreetingClose" aria-label="Dismiss greeting">×</button>
     <p>Hey! I'm Iso ✨</p>
     <span>Need help exploring? Tap me!</span>
   </div>
@@ -661,34 +644,19 @@ footer {
         <strong>Hey, I'm Iso! ✨</strong>
         <p>What brings you here today?</p>
       </div>
-      <button
-        type="button"
-        class="iso-close"
-        id="isoClose"
-        aria-label="Close Iso's menu"
-      >×</button>
+      <button type="button" class="iso-close" id="isoClose" aria-label="Close Iso's menu">×</button>
     </div>
 
     <div class="iso-choices">
-      <button type="button" data-iso-topic="learning">
-        🎓 I'm interested in educational technology
-      </button>
-      <button type="button" data-iso-topic="digital">
-        💻 I'm looking for digital solutions
-      </button>
-      <button type="button" data-iso-topic="creative">
-        🎨 I want to explore creative work
-      </button>
-      <button type="button" data-iso-topic="collaborate">
-        ✨ I'd like to collaborate
-      </button>
+      <button type="button" data-iso-topic="learning">🎓 I'm interested in educational technology</button>
+      <button type="button" data-iso-topic="digital">💻 I'm looking for digital solutions</button>
+      <button type="button" data-iso-topic="creative">🎨 I want to explore creative work</button>
+      <button type="button" data-iso-topic="collaborate">✨ I'd like to collaborate</button>
     </div>
 
     <div id="isoRecommendation" aria-live="polite" hidden>
       <p id="isoRecommendationText"></p>
-      <a id="isoRecommendationLink" href="#work">
-        Explore this section →
-      </a>
+      <a id="isoRecommendationLink" href="#work">Explore this section →</a>
     </div>
   </aside>
 </div>
@@ -697,7 +665,7 @@ footer {
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-/* PROJECT FILTERS */
+/* FILTER PROJECTS */
 
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
@@ -719,26 +687,14 @@ filterButtons.forEach(button => {
   });
 });
 
-/* PROJECT DETAIL CONTENT */
+/* PROJECT POPUPS */
 
 const projects = {
-  learning: {
-    title: "LearnLab AR",
-    description:
-      "A proposed educational experience that would allow learners to explore subjects such as photosynthesis through interactive visuals and web-based augmented reality.",
-    features: [
-      "Visual explanations of school concepts",
-      "Mobile-friendly interactive learning",
-      "Potential AR experiences triggered by illustrations"
-    ],
-    note:
-      "Status: Concept exploration. The full LearnLab AR experience has not yet been built."
-  },
   flow: {
-    title: "FlowTrack",
+    title:"FlowTrack",
     description:
       "A fictional workflow concept for organising deliveries, shipment statuses and supporting documents in one clear interface.",
-    features: [
+    features:[
       "Delivery progress overview",
       "Proof-of-delivery document tracking",
       "Clear indicators for outstanding information"
@@ -747,10 +703,10 @@ const projects = {
       "Status: Concept exploration. This is not a deployed client system and uses no confidential business data."
   },
   iso: {
-    title: "Meet Iso",
+    title:"Meet Iso",
     description:
       "Iso is the illustrated navigation guide on this website. She provides a friendly way for visitors to discover projects and learn about the creative practice behind them.",
-    features: [
+    features:[
       "Custom illustrated character",
       "Animated floating interaction",
       "Interactive visitor-interest navigation"
@@ -775,8 +731,8 @@ document.querySelectorAll("[data-project]").forEach(button => {
     dialogTitle.textContent = project.title;
     dialogDescription.textContent = project.description;
     dialogNote.textContent = project.note;
-
     dialogFeatures.replaceChildren();
+
     project.features.forEach(feature => {
       const item = document.createElement("li");
       item.textContent = feature;
@@ -805,54 +761,42 @@ const isoButton = document.getElementById("isoButton");
 const isoPanel = document.getElementById("isoPanel");
 const isoClose = document.getElementById("isoClose");
 const isoGreeting = document.getElementById("isoGreeting");
-const isoGreetingClose =
-  document.getElementById("isoGreetingClose");
+const isoGreetingClose = document.getElementById("isoGreetingClose");
 
-const recommendation =
-  document.getElementById("isoRecommendation");
-const recommendationText =
-  document.getElementById("isoRecommendationText");
-const recommendationLink =
-  document.getElementById("isoRecommendationLink");
+const recommendation = document.getElementById("isoRecommendation");
+const recommendationText = document.getElementById("isoRecommendationText");
+const recommendationLink = document.getElementById("isoRecommendationLink");
 
 const isoTopics = {
-  learning: {
-    message:
-      "Explore interactive learning and the LearnLab AR concept.",
-    link: "#work",
-    label: "Explore interactive learning →"
+  learning:{
+    message:"Explore interactive learning through LearnLab AR.",
+    link:"#work",
+    label:"Explore LearnLab AR →"
   },
-  digital: {
-    message:
-      "Discover digital workflow ideas, including FlowTrack.",
-    link: "#work",
-    label: "Explore digital concepts →"
+  digital:{
+    message:"Discover digital workflow ideas, including FlowTrack.",
+    link:"#work",
+    label:"Explore digital concepts →"
   },
-  creative: {
-    message:
-      "Explore visual storytelling and the Meet Iso prototype.",
-    link: "#work",
-    label: "See creative work →"
+  creative:{
+    message:"Explore visual storytelling and the Meet Iso prototype.",
+    link:"#work",
+    label:"See creative work →"
   },
-  collaborate: {
-    message:
-      "Have a project in mind? Visit the collaboration section.",
-    link: "#contact",
-    label: "Go to contact →"
+  collaborate:{
+    message:"Have a project in mind? Visit the collaboration section.",
+    link:"#contact",
+    label:"Go to contact →"
   }
 };
 
 function setIsoPanel(open) {
   isoPanel.hidden = !open;
-
   isoButton.setAttribute("aria-expanded", String(open));
   isoButton.setAttribute(
     "aria-label",
-    open
-      ? "Close Iso's navigation guide"
-      : "Open Iso's navigation guide"
+    open ? "Close Iso's navigation guide" : "Open Iso's navigation guide"
   );
-
   if (open) isoGreeting.hidden = true;
 }
 
@@ -894,7 +838,6 @@ document.addEventListener("keydown", event => {
 
 document.addEventListener("click", event => {
   const guide = document.getElementById("isoGuide");
-
   if (!isoPanel.hidden && !guide.contains(event.target)) {
     setIsoPanel(false);
   }
